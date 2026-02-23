@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 6 - Web Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <div class="logo">SPU Travel</div>
+            <ul class="nav-links">
+                <li><a href="#hero">หน้าแรก</a></li>
+                <li><a href="#about">เกี่ยวกับเรา</a></li>
+                <li><a href="#gallery">แกลเลอรี</a></li>
+                <li><a href="#packages">บทความ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>เปิดประสบการณ์การเดินทางครั้งใหม่</h1>
+            <a href="#about" class="cta-button">อ่านต่อเลย</a>
+        </div>
+    </section>
+
+    <section id="about" class="heading-section">
+        <h2>สถานที่ท่องเที่ยวยอดฮิต</h2>
+        <p>ออกเดินทางไปพบกับประสบการณ์ใหม่ๆ ที่คุณไม่เคยสัมผัสมาก่อน เราได้รวบรวมสถานที่ที่ดีที่สุดมาไว้ให้คุณแล้ว ให้คุณได้พักผ่อนอย่างเต็มที่ในวันหยุดสุดสัปดาห์</p>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=500&q=80" alt="รูปที่ 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="รูปที่ 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=500&q=80" alt="รูปที่ 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&q=80" alt="รูปที่ 4"></div>
+        </div>
+    </section>
+
+    <section id="packages" class="cards-section">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=400&q=80" alt="ภูเขา">
+                <div class="card-body">
+                    <h3>เที่ยวภูเขา</h3>
+                    <p>สูดอากาศบริสุทธิ์บนยอดเขาที่สวยงามที่สุด พร้อมจุดชมวิวพระอาทิตย์ขึ้น</p>
+                    <button class="card-btn">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="ทะเล">
+                <div class="card-body">
+                    <h3>เที่ยวทะเล</h3>
+                    <p>ผ่อนคลายไปกับเสียงคลื่นและหาดทรายสีขาว เหมาะกับการพักผ่อนในวันหยุด</p>
+                    <button class="card-btn">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1496196614460-48988a57fccf?w=400&q=80" alt="แคมป์">
+                <div class="card-body">
+                    <h3>ตั้งแคมป์</h3>
+                    <p>กิจกรรมรอบกองไฟใต้แสงดาวในยามค่ำคืน สัมผัสธรรมชาติอย่างใกล้ชิด</p>
+                    <button class="card-btn">ดูรายละเอียด</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=400&q=80" alt="เดินป่า">
+                <div class="card-body">
+                    <h3>เดินป่า</h3>
+                    <p>ท้าทายความสามารถกับเส้นทางศึกษาธรรมชาติที่สมบูรณ์แบบ</p>
+                    <button class="card-btn">ดูรายละเอียด</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 โหมดมืด</button>
+
+    <footer>
+        <p>This is a responsive website build.</p>
+        <p>&copy; 2024 SPU</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('darkModeToggle');
+        
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode'); // เพิ่ม/ลบ Class dark-mode ออกจาก body
+            
+            // ตรวจสอบว่าเปิดโหมดมืดอยู่หรือไม่ เพื่อเปลี่ยนข้อความบนปุ่ม
+            if (document.body.classList.contains('dark-mode')) {
+                toggleBtn.innerText = '☀️ โหมดสว่าง';
+            } else {
+                toggleBtn.innerText = '🌙 โหมดมืด';
+            }
+        });
+    </script>
+
+</body>
+</html>
